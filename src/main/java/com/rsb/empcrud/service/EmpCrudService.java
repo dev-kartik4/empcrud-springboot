@@ -42,10 +42,6 @@ public class EmpCrudService {
 		}else {
 			emp.setEmpId(sequenceGeneratorService.generateSequence(Employee.SEQUENCE_NAME));
 			emp.setPassword(encoder.encode(emp.getPassword()));
-			emp.setFirstName(encoder.encode(emp.getFirstName()));
-			emp.setLastName(encoder.encode(emp.getLastName()));
-			emp.setEmail(encoder.encode(emp.getEmail()));
-
 			emp = empRepo.save(emp);
 		}
 		return emp;
